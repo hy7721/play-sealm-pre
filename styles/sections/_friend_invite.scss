@@ -1,0 +1,191 @@
+#friendInvite {
+  background: url('#{$imgPath}/friend_invite/bg_friend_invite.jpg') no-repeat fixed center/cover;
+  
+  .summary_box {
+      .event_num {
+          margin-bottom: 30px;
+          font-weight: 700;
+          color: #fdff00;
+      }
+
+      .sub_tit {
+          letter-spacing: -0.1px;
+      }
+
+      .tit {
+          margin-top: 6px;
+          letter-spacing: -2.8px;
+
+          span {
+              color: #fdff00;
+          }
+      }
+
+      .date {
+          color: #2a1d5d;
+      }
+  }
+
+  .friend_invite_box {
+      display: flex;
+      position: relative;
+      margin-top: 37px;
+
+      .invite_guide {
+          display: block;
+          width: 720px;
+          padding: 48px 74px 46px 96px;
+          background: url('#{$imgPath}/friend_invite/bg_invite_guide.png') no-repeat center/cover;
+          font-size: 0;
+          text-align: center;
+          box-sizing: border-box;
+
+          .tit {
+              display: block;
+              margin: 0 auto;
+              font-size: 28px;
+              font-weight: bold;
+              line-height: 27px;
+              text-align: center;
+          }
+
+          .guide_step_lst {
+              display: inline-block;
+              margin-top: 30px;
+              font-size: 0;
+              white-space: nowrap;
+
+              li {
+                  display: inline-block;
+                  position: relative;
+                  vertical-align: top;
+
+                  &~li {
+                      margin-left: 120px;
+                  }
+
+                  &:not(:last-child):after {
+                      display: block;
+                      position: absolute;
+                      top: 50%;
+                      left: 100%;
+                      width: 19px;
+                      height: 31px;
+                      margin-left: 50px;
+                      @extend %sp;
+                      background-position: -1114px -575px;
+                      transform: translateY(-50%);
+                      content: '';
+                  }
+
+                  .ico_contain {
+                      display: flex;
+                      width: 70px;
+                      height: 70px;
+                      margin: 0 auto;
+                      background: rgb(255, 238, 54);
+                      background: linear-gradient(135deg, rgba(255, 238, 54, 1) 20%, rgba(53, 215, 156, 1) 50%, rgba(255, 238, 54, 1) 80%);
+                      border-radius: 50%;
+                      background-size: 600% 150%;
+                      justify-content: center;
+                      align-items: center;
+                  }
+
+                  .guide_txt {
+                      position: absolute;
+                      top: 100%;
+                      left: 50%;
+                      margin-top: 7px;
+                      font-size: 16px;
+                      line-height: 20px;
+                      text-align: center;
+                      white-space: nowrap;
+                      transform: translateX(-50%);
+                      backface-visibility: hidden;
+                  }
+
+                  &.highlight {
+                      perspective: 1px;
+
+                      .ico_contain {
+                          animation: gradient 2s ease;
+                      }
+
+                      .guide_txt {
+                          animation: zoomIn 2s ease;
+                      }
+                  }
+              }
+          }
+
+          .reg_fm {
+              margin-top: 85px;
+
+              .chkbox_grp {
+                  margin-top: 12px;
+              }
+
+              .chkbox {
+                  display: inline-block;
+                  margin-left: 0;
+                  letter-spacing: -1px;
+
+                  &~.chkbox {
+                      margin-top: 7px;
+                  }
+
+                  &+a {
+                      font-size: 16px;
+                      line-height: 24px;
+                      color: #f27d00;
+                      vertical-align: bottom;
+
+                      &~.chkbox {
+                          display: block;
+                      }
+                  }
+
+                  span span {
+                      font-weight: 300;
+                  }
+              }
+
+              .btn {
+                  margin-top: 26px;
+                  background-image: url('#{$imgPath}/friend_invite/bg_yellow_btn.png');
+              }
+          }
+      }
+
+      .notice_btn {
+          position: absolute;
+          top: 100%;
+          left: 20px;
+          margin-top: 20px;
+      }
+
+      .invite_reward {
+          position: relative;
+          height: 510px;
+          width: 710px;
+          margin-left: 28px;
+
+          img {
+              position: absolute;
+              top: -79px;
+              left: -72px;
+              width: 896px;
+              pointer-events: none;
+          }
+
+          p {
+              position: absolute;
+              top: 545px;
+              left: 240px;
+              font-size: 14px;
+              text-align: center;
+              letter-spacing: -0.2px;
+          }
+      }
+  }
+}

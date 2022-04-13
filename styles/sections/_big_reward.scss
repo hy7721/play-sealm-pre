@@ -1,0 +1,379 @@
+#bigReward {
+  background: #8e3eed url('#{$imgPath}/big_reward/bg_big_reward.jpg') no-repeat 50% 50%/2500px auto;
+  font-size: 0;
+
+  &.scroll-scrolly_visible {
+      .inner_wrap {
+          align-self: flex-start;
+      }
+  }
+
+  .inner_wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100vw;
+      height: 100vh;
+      text-align: center;
+      justify-content: center;
+      position: relative;
+      
+      @media screen and (min-width: 2560px) {
+          background-position: 50% 0;
+          background-size: 100% auto;
+      }
+  }
+
+  .coin_box {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // overflow: hidden;
+
+      .coin {
+          position: absolute;
+          top: -50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          @-webkit-keyframes floatingCoin {
+              50% {
+                  top: 52%;
+              }
+
+              100% {
+                  top: 50%;
+              }
+          }
+
+          @keyframes floatingCoin {
+              50% {
+                  top: 52%;
+              }
+
+              100% {
+                  top: 50%;
+              }
+          }
+
+          @-webkit-keyframes floatingCoin2 {
+              50% {
+                  top: 48%;
+              }
+
+              100% {
+                  top: 50%;
+              }
+          }
+
+          @keyframes floatingCoin2 {
+              50% {
+                  top: 48%;
+              }
+
+              100% {
+                  top: 50%;
+              }
+          }
+
+          &.dropped {
+              animation-iteration-count: infinite;
+              animation-timing-function: linear;
+
+              &.l1,
+              &.r2,
+              &.r4 {
+                  animation-name: floatingCoin;
+              }
+
+              &.l2,
+              &.l4,
+              &.r1,
+              &.r3 {
+                  animation-name: floatingCoin2;
+              }
+          }
+
+          &.l1 {
+              width: 122px;
+              height: 105px;
+              background: url('#{$imgPath}/big_reward/img_coin_left_1.png') no-repeat;
+              margin-left: -519px;
+              margin-top: -342px;
+              animation-duration: 7s;
+          }
+
+          &.l2 {
+              width: 134px;
+              height: 113px;
+              background: url('#{$imgPath}/big_reward/img_coin_left_2.png') no-repeat;
+              margin-left: -714px;
+              margin-top: -68px;
+              animation-duration: 6.7s;
+          }
+
+          &.l4 {
+              width: 242px;
+              height: 201px;
+              background: url('#{$imgPath}/big_reward/img_coin_left_4.png') no-repeat;
+              margin-left: -608px;
+              margin-top: 304px;
+              animation-duration: 6s;
+          }
+
+          &.r1 {
+              width: 132px;
+              height: 114px;
+              background: url('#{$imgPath}/big_reward/img_coin_right_1.png') no-repeat;
+              margin-left: 334px;
+              margin-top: -389px;
+              animation-duration: 7.2s;
+          }
+
+          &.r2 {
+              width: 198px;
+              height: 162px;
+              background: url('#{$imgPath}/big_reward/img_coin_right_2.png') no-repeat;
+              margin-left: 657px;
+              margin-top: -151px;
+              animation-duration: 6.9s;
+          }
+
+          &.r3 {
+              width: 81px;
+              height: 85px;
+              background: url('#{$imgPath}/big_reward/img_coin_right_3.png') no-repeat;
+              margin-left: 598px;
+              margin-top: 109px;
+              animation-duration: 6.6s;
+          }
+
+          &.r4 {
+              width: 281px;
+              height: 239px;
+              background: url('#{$imgPath}/big_reward/img_coin_right_4.png') no-repeat;
+              margin-left: 658px;
+              margin-top: 383px;
+              animation-duration: 6.3s;
+          }
+      }
+
+  }
+
+  .scroll-wrapper {
+      height: 1150px;
+  }
+
+  .summary_box {
+
+      .event_num {
+          margin-bottom: 30px;
+          font-weight: 700;
+          color: #ffee36;
+      }
+
+      .sub_tit {
+          color: #fff;
+      }
+
+      .date {
+          color: #000;
+      }
+
+      .tit {
+          color: #fff;
+
+          small {
+              display: block;
+              font-size: 26px;
+              line-height: 26px;
+              margin-bottom: 8px;
+          }
+
+          span {
+              color: #ffee36;
+          }
+      }
+  }
+
+  .reward_box {
+      width: 1096px;
+      height: 353px;
+      margin: -6px auto 0;
+      text-align: center;
+      position: relative;
+
+      @keyframes popOut {
+          0% {
+              transform: scale(0);
+          }
+
+          85% {
+              transform: scale(1.2);
+          }
+
+          100% {
+              transform: scale(1);
+          }
+      }
+
+      img {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          left: 0;
+          top: 0;
+          transform-origin: bottom center;
+          transform: scale(0);
+
+          &.show {
+              animation: popOut 0.4s ease-out 0.2s forwards;
+          }
+      }
+
+      .note {
+          position: absolute;
+          top: 282px;
+          right: 98px;
+          font-size: 10px;
+          line-height: 16px;
+          color: #544e5b;
+          text-align: left;
+      }
+  }
+
+  .method_box {
+      position: relative;
+      display: inline-block;
+      text-align: center;
+      margin-top: -11px;
+
+      .deco_left {
+          position: absolute;
+          top: 61px;
+          left: -157px;
+          width: 133px;
+          height: 205px;
+          background: url('#{$imgPath}/big_reward/deco_left_method_reward.png') no-repeat;
+      }
+
+      .deco_right {
+          position: absolute;
+          top: 56px;
+          right: -117px;
+          width: 95px;
+          height: 153px;
+          background: url('#{$imgPath}/big_reward/deco_right_method_reward.png') no-repeat;
+      }
+
+      .notice_btn {
+          position: absolute;
+          bottom: 11px;
+          right: -139px;
+      }
+
+      .tit {
+          display: block;
+          font-size: 36px;
+          line-height: 35px;
+          letter-spacing: -1px;
+          color: #ffe900;
+          font-weight: 700;
+          text-align: center;
+      }
+
+      .method_lst {
+          display: inline-block;
+          margin-top: 20px;
+
+          li {
+              position: relative;
+              display: inline-block;
+              width: 175px;
+              height: 208px;
+              text-align: center;
+
+              &~li {
+                  margin-left: 13px;
+              }
+
+              &:before {
+                  position: absolute;
+                  top: -3px;
+                  left: -3px;
+                  content: '';
+                  width: 204px;
+                  height: 237px;
+                  background: url('#{$imgPath}/big_reward/bg_reward_method.png') no-repeat center/cover;
+              }
+
+              .ico {
+                  position: relative;
+                  z-index: 1;
+                  display: block;
+                  margin: 29px auto 0;
+              }
+
+              p {
+                  display: flex;
+                  position: relative;
+                  margin-top: 6px;
+                  z-index: 1;
+                  height: 54px;
+                  font-size: 16px;
+                  line-height: 18px;
+                  color: #000;
+                  font-weight: 400;
+                  justify-content: center;
+
+                  small {
+                      font-size: 12px;
+                  }
+              }
+
+              &:first-child {
+                  p {
+                      align-items: center;
+                  }
+              }
+          }
+      }
+  }
+
+  // 사전예약 종료 후
+  &.after {
+      .method_box {
+          margin-top: -37px;
+
+          .method_lst {
+              margin-top: 16px;
+          }
+      }
+
+      .btn_box {
+          position: relative;
+          margin-top: 16px;
+          .btn {
+              width: 256px;
+              height: 59px;
+              background-image: url('#{$imgPath}/big_reward/bg_yellow_btn2.png');
+              line-height: 58px;
+              font-size: 22px;
+              color: #000;
+
+              &:after {
+                  display: inline-block;
+                  margin: -3px 0 0 5px;
+                  width: 9px;
+                  height: 15px;
+                  @extend %sp;
+                  background-position: -1125px -248px;
+                  vertical-align: middle;
+                  content: '';
+              }
+          }
+      }
+  }
+}

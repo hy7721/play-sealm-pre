@@ -1,0 +1,152 @@
+#field {
+
+  .summary_box {
+      position: absolute;
+      top: 120px;
+      left: 50%;
+      z-index: 3;
+      transform: translateX(-50%);
+
+      @media screen and (max-width: 1920px) {
+          top: 80px;
+      }
+  }
+
+  .bgm_btn {
+      position: absolute;
+      bottom: 40px;
+      left: 40px;
+      z-index: 3;
+  }
+
+  .tabs_btn_grp {
+      position: absolute;
+      bottom: 251px;
+
+      @media screen and (max-width: 1920px) {
+          bottom: 188px;
+      }
+
+      left: 50%;
+      z-index: 2;
+      transform: translateX(-50%);
+      font-size: 0;
+      white-space: nowrap;
+
+      .tab_btn {
+          display: inline-block;
+          font-size: 28px;
+          color: #ffffff;
+          font-weight: 700;
+          text-align: center;
+      }
+  }
+
+  .tab_black_left {
+      width: 353px;
+      height: 90px;
+      margin-right: -17px;
+      @extend %sp;
+      background-position: 0px -255px;
+      line-height: 94px;
+
+      &.is_active {
+          background-position: 0px -349px;
+      }
+  }
+
+  .tab_black_mid,
+  .tab_black_last {
+      width: 353px;
+      height: 90px;
+      @extend %sp;
+      background-position: 0px -443px;
+      line-height: 90px;
+
+      &.is_active {
+          background-position: 0px -537px;
+      }
+  }
+
+  .tab_black_right {
+      margin-left: -21px;
+      width: 353px;
+      height: 90px;
+      @extend %sp;
+      background-position: -693px 0px;
+      line-height: 92px;
+
+      &.is_active {
+          background-position: -693px -94px;
+      }
+  }
+
+  .tab_black_last {
+      margin-left: -17px;
+  }
+
+  .tabs_cont {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+
+      .tab {
+          display: block;
+          position: absolute;
+          overflow: hidden;
+          top: 0;
+          left: 0;
+          z-index: 0;
+          width: inherit;
+          height: inherit;
+          opacity: 0;
+          transition: opacity 0.4s;
+
+          &.is_active {
+              opacity: 1;
+              z-index: 1;
+          }
+      }
+
+      #tab1 {
+          background: url('#{$imgPath}/field/bg_stage_1.jpg') no-repeat center/cover;
+      }
+
+      #tab2 {
+          background: url('#{$imgPath}/field/bg_stage_2.jpg') no-repeat center/cover;
+      }
+
+      #tab3 {
+          background: url('#{$imgPath}/field/bg_stage_3.jpg') no-repeat center/cover;
+      }
+
+      #tab4 {
+          background: url('#{$imgPath}/field/bg_stage_4.jpg') no-repeat center/cover;
+      }
+  }
+
+  .script {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: absolute;
+      bottom: 150px;
+      left: 50%;
+      width: 800px;
+      height: 86px;
+      background: url('#{$imgPath}/field/bg_script.png') no-repeat;
+      box-sizing: border-box;
+      font-size: 22px;
+      line-height: 30px;
+      color: #ffffff;
+      font-weight: 400;
+      text-align: center;
+      transform: translateX(-50%);
+
+      @media screen and (max-width: 1920px) {
+          bottom: 90px;
+      }
+  }
+}

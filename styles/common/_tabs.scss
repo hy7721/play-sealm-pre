@@ -1,0 +1,13 @@
+.tabs_cont {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  .tab {
+      display: none;
+      flex-grow: 1;
+      &.is_active {
+          display: flex;
+          flex-direction: column;
+      }
+  }
+}

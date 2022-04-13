@@ -1,0 +1,520 @@
+#devNote {
+  $bookWidth:1320px;
+  $bookHeight:795px;
+
+  $paperWidth:615px;
+  $paperHeight:657px;
+
+  flex-direction: column;
+  background: url('#{$imgPath}/dev_note/bg_dev_note.jpg') no-repeat fixed center/cover;
+
+  .deco_bird {
+      position: absolute;
+      top: 50%;
+      right: 50%;
+      width: 18.594vw;
+      height: 13.438vw;
+      background: url('#{$imgPath}/dev_note/deco_bird.png') no-repeat center/cover;
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(35.391vw, -22.656vw);
+  }
+
+  .deco_char_left {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 35.664vw;
+      height: 55.742vw;
+      background: url('#{$imgPath}/dev_note/deco_char_left.png') no-repeat center/cover;
+      pointer-events: none;
+      z-index: 0;
+  }
+
+  .notebook {
+      position: relative;
+      width: $bookWidth;
+      margin-top: -25px;
+  }
+
+  .hand_indicator {
+      position: absolute;
+      bottom: 25px;
+      right: 105px;
+      width: 251px;
+      height: 208px;
+      background: url('#{$imgPath}/dev_note/ico_hand_indicator.png') no-repeat center/cover;
+  }
+
+  #canvas {
+      position: relative;
+      margin: 0 auto;
+      z-index: 1;
+  }
+
+  .dev_note_vid {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      width: 615px;
+  }
+  
+  .flipbook {
+      width: $bookWidth;
+      height: $bookHeight;
+      z-index: 0;
+  }
+  
+  .flipbook .inner-gradient {
+      background: -webkit-gradient(linear, left top, right top, color-stop(0, rgba(0, 0, 0, 0)), color-stop(0.3, rgba(0, 0, 0, 0.2)), color-stop(0.5, rgba(255, 255, 255, 0.2))) !important;
+  }
+  
+  .flipbook .outer-gradient {
+      background: -webkit-gradient(linear, left top, right top, color-stop(0.4, rgba(0, 0, 0, 0)), color-stop(0.5, rgba(0, 0, 0, 0.3)), to(rgba(0, 0, 0, 0))) !important;
+  }
+  
+  .animated {
+      -webkit-transition: margin-left 0.2s ease-in-out;
+      -moz-transition: margin-left 0.2s ease-in-out;
+      -o-transition: margin-left 0.2s ease-in-out;
+      -ms-transition: margin-left 0.2s ease-in-out;
+      transition: margin-left 0.2s ease-in-out;
+  }
+  
+  .shadow {
+      background-image: url('#{$imgPath}/dev_note/book-shadow-repeat.png');
+      background-repeat: repeat;
+      z-index: -10;
+      overflow: visible !important;
+  
+      &:after,
+      &:before {
+          position: absolute;
+          top: 0;
+          bottom: 0;
+          width: 100px;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size: auto 100%;
+          content: '';
+      }
+  
+      &:before {
+          left: -96px;
+          background-image: url('#{$imgPath}/dev_note/book-shadow-left.png');
+      }
+  
+      &:after {
+          right: -100px;
+          background-image: url('#{$imgPath}/dev_note/book-shadow-right.png');
+      }
+  }
+  
+  .zoom-pic {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.2);
+      z-index: 999;
+  }
+  
+  
+  .flipbook .page {
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: cover;
+  
+      .text_area {
+          p {
+              font-size: 22px;
+              line-height: 31px;
+              color: #343333;
+          }
+  
+          em {
+              color: #ff0000;
+          }
+      }
+  }
+  
+  .flipbook .p1 {
+      background-image: url(#{$imgPath}/dev_note/book-covers1.png) !important;
+  
+      .text_area {
+          width: $paperWidth;
+          text-align: center;
+      }
+  
+      .devnote_logo {
+          margin: 104px 0 0 23px;
+      }
+  
+      .book_title {
+          margin-top: 28px;
+          font-weight: 800;
+          font-size: 50px;
+          color: #fffc00;
+      }
+  }
+  
+  .flipbook .front-side .depth {
+      left: 4px;
+      background-position: 0 0;
+  }
+  
+  .flipbook .back-side .depth {
+      right: 4px;
+      background-position: right 0;
+  }
+  
+  .flipbook .p2 {
+      background-image: url(#{$imgPath}/dev_note/book-covers2.png) !important;
+      background-position: 100% 0;
+  }
+  
+  .flipbook.is_lastpage .p2 {
+      background-image: url(#{$imgPath}/dev_note/book-covers2-nobookmark.png) !important;
+      background-position: 100% 0;
+  }
+  
+  .flipbook .p3 {
+      background-image: url(#{$imgPath}/dev_note/3.png) !important;
+      background-position: 0 0 !important;
+  
+      .text_area {
+          margin-top: 86px;
+          text-align: center;
+      }
+  }
+  
+  .flipbook .p4 {
+      background-image: url(#{$imgPath}/dev_note/4.png) !important;
+      background-position: 0 0 !important;
+  }
+  
+  .flipbook .p5 {
+      background-image: url(#{$imgPath}/dev_note/5.png) !important;
+      background-position: 0 0 !important;
+  
+      .text_area {
+          margin-top: 55px;
+          padding-left: 50px;
+  
+          &.text2 {
+              margin-top: 333px;
+          }
+      }
+  }
+  
+  .flipbook .p6 {
+      background-image: url(#{$imgPath}/dev_note/6.png) !important;
+      background-position: 0 0 !important;
+  }
+  
+  .flipbook .p7 {
+      background-image: url(#{$imgPath}/dev_note/7.png) !important;
+      background-position: 0 0 !important;
+  
+      .text_area {
+          margin-top: 89px;
+          height: 230px;
+          padding-left: 75px;
+  
+          &:before {
+              display: inline-block;
+              height: 100%;
+              vertical-align: middle;
+              content: '';
+          }
+  
+          p {
+              display: inline-block;
+              vertical-align: middle;
+  
+              &.highlighter {
+                  padding-left: 30px;
+                  background: url('#{$imgPath}/dev_note/bg_highlighter.png') no-repeat;
+              }
+          }
+  
+          em {
+              color: #ce0000;
+          }
+  
+          &.text2 {
+              margin-top: 35px;
+              padding-left: 225px;
+          }
+      }
+  }
+  
+  .flipbook .p8 {
+      background-image: url(#{$imgPath}/dev_note/8.png) !important;
+      background-position: 0 0 !important;
+  
+      &:after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 60px;
+          height: $paperHeight;
+          background: url('#{$imgPath}/dev_note/book-shadow-paper-left.png') no-repeat;
+          background-position: 100% 0;
+          content: '';
+      }
+
+      .play_btn_wrap {
+          position: absolute;
+          top: 100px;
+          bottom: 100px;
+          left: 0;
+          right: 0;
+      }
+      
+      .dev_note_play {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+
+          &:hover {
+              .ico_spot_play {
+                  transform: rotate(90deg);
+              }
+          }
+  
+          .ico_spot_play {
+              position: relative;
+              transition: transform .3s;
+          }
+  
+          .ico_spot_play_triangle {
+              position: absolute;
+              top: 41px;
+              left: 46px;
+          }
+      }
+  }
+
+  .flipbook .p9 {
+      background-image: url(#{$imgPath}/dev_note/book-covers-back.png) !important;
+  }
+  
+  .flipbook .p10 {
+      background-image: url(#{$imgPath}/dev_note/book-covers-last.png) !important;
+      background-position: 100% 0;
+  
+      .text_area {
+          text-align: center;
+      }
+  
+      .devnote_logo {
+          margin: 329px 0 0 54px;
+      }
+  }
+  
+  .flipbook .hard {
+      width: 480px;
+      height: 600px;
+      -webkit-box-shadow: none;
+      -moz-box-shadow: none;
+      -ms-box-shadow: none;
+      box-shadow: none;
+  }
+  
+  .flipbook .page-wrapper {
+      -webkit-perspective: 2000px;
+      -moz-perspective: 2000px;
+      -ms-perspective: 2000px;
+      perspective: 2000px;
+  }
+  
+  .flipbook .own-size {
+      overflow: hidden;
+      width: $paperWidth;
+      height: $paperHeight;
+      background-color: #fff;
+  }
+  
+  .flipbook .own-size.even {
+      background-position: 0 0;
+  }
+  
+  .flipbook .own-size.odd {
+      background-position: 460px 0;
+  }
+  
+  .flipbook .loader {
+      background-image: url(#{$imgPath}/dev_note/loader.gif);
+      width: 22px;
+      height: 22px;
+      position: absolute;
+      top: 280px;
+      left: 219px;
+  }
+  
+  .flipbook .page-number {
+      color: #999;
+      width: 100%;
+      bottom: 25px;
+      position: absolute;
+      display: block;
+      text-align: center;
+      line-height: 30px;
+      font-size: 11px;
+  }
+  
+  .ie8 .flipbook .even,
+  .ie9 .flipbook .even {
+      background-color: white;
+      background-image: url(#{$imgPath}/dev_note/gradient-page-left.jpg);
+      background-position: right top;
+      background-repeat: repeat-y;
+  }
+  
+  .ie8 .flipbook .odd,
+  .ie9 .flipbook .odd {
+      background-color: white;
+      background-image: url(#{$imgPath}/dev_note/gradient-page-right.jpg);
+      background-position: left top;
+      background-repeat: repeat-y;
+  }
+  
+  .flipbook .pointer {
+      position: absolute;
+      bottom: 10px;
+      width: 50px;
+      height: 50px;
+      animation-name: pointerAni;
+      animation-duration: 1.5s;
+      animation-duration: linear;
+      animation-iteration-count: infinite;
+      transform: translateY(0);
+      font-size: 30px;
+  }
+  
+  .flipbook .even .pointer {
+      left: 10px;
+  }
+  
+  .flipbook .odd .pointer {
+      right: 10px;
+  }
+  
+  @keyframes pointerAni {
+      0% {
+          transform: translateY(0);
+      }
+  
+      50% {
+          transform: translateY(-8%);
+      }
+  
+      100% {
+          transform: translateY(0);
+      }
+  }
+  
+  .flipbook .even .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, left top, right top, color-stop(0.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0.2)));
+      background-image: -webkit-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
+      background-image: -moz-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
+      background-image: -ms-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
+      background-image: -o-linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
+      background-image: linear-gradient(left, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.2) 100%);
+  }
+  
+  .flipbook .odd .gradient {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: -webkit-gradient(linear, right top, left top, color-stop(0.95, rgba(0, 0, 0, 0)), color-stop(1, rgba(0, 0, 0, 0.15)));
+      background-image: -webkit-linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%);
+      background-image: -moz-linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%);
+      background-image: -ms-linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%);
+      background-image: -o-linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%);
+      background-image: linear-gradient(right, rgba(0, 0, 0, 0) 95%, rgba(0, 0, 0, 0.15) 100%);
+  }
+  
+  .hand_indicator {
+      animation-name: pointerAni;
+      animation-duration: 1.5s;
+      animation-duration: linear;
+      animation-iteration-count: infinite;
+      transform: translateY(0);
+  }
+  
+  .flipbook.grab {
+      cursor: -moz-grab;
+      cursor: -webkit-grab;
+      cursor: grab;
+  }
+  
+  .flipbook.grabbing {
+      cursor: -moz-grabbing;
+      cursor: -webkit-grabbing;
+      cursor: grabbing;
+  }
+  
+  .flipbook.notgrab {
+      cursor: auto;
+  }
+
+  .previous-button, .next-button {
+      position: absolute;
+      top: 350px;
+      width: 80px;
+      z-index: 10;
+      height: 100px;
+      text-align: center;
+      cursor: pointer;
+      &:after {
+          display: inline-block;
+          margin-top: 24px;
+          content: '';
+      }
+     
+  }
+
+  .previous-button {
+      left: -52px;
+      &:after {
+          width: 34px;
+          height: 49px;
+          @extend %sp;
+          background-position: -1006px -684px;
+      }
+  }
+
+  .next-button {
+      right: -52px;
+      &:after {
+          width: 34px;
+          height: 49px;
+          @extend %sp;
+          background-position: -1102px -976px;
+      }
+  }
+
+  .is_firstpage {
+      .previous-button {
+          display: none;
+      }
+  }
+
+  .is_lastpage {
+      .next-button {
+          display: none;
+      }
+  }
+}

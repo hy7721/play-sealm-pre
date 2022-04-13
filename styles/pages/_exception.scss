@@ -1,0 +1,498 @@
+body,
+input,
+select,
+textarea,
+button {
+  font-family: $notoSans;
+
+  &:focus,
+  &:focus-within {
+    outline: none;
+  }
+}
+
+.blind,
+caption span,
+legend {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  font-size: 0;
+  text-indent: -9999px;
+  white-space: nowrap;
+}
+
+.skip {
+  height: 0;
+}
+
+.skip a {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 100%;
+  height: 25px;
+  text-align: center;
+}
+
+.skip a:focus,
+#skip a:active {
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  padding: 10px 0;
+  background: #000;
+  font-weight: bold;
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+html {
+  overflow: hidden;
+}
+
+.wrap.error {
+  min-height: 100vh;
+  background-color: #f8f8f8;
+
+  .highlights {
+    color: $highlights !important;
+  }
+
+  #content {
+    min-height: calc(100vh - 166px);
+    padding-top: 98px;
+    text-align: center;
+
+    &:after {
+      display: inline-block;
+      min-height: calc(100vh - 166px);
+      vertical-align: middle;
+      content: '';
+    }
+
+    .inner {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .footer {
+    height: 68px;
+    padding-top: 14px;
+    background-color: $white;
+
+    .inner {
+      position: relative;
+      margin: 0 110px;
+    }
+
+    .logo_playwith {
+      position: absolute;
+      top: 7px;
+    }
+
+    .copyright {
+      display: block;
+      color: #a5a5a5;
+      font-size: 13px;
+      line-height: 40px;
+      text-align: center;
+    }
+
+    .language_box {
+      position: absolute;
+      top: 0;
+      right: -18px;
+      width: 181px;
+
+      .btn_select {
+        display: block;
+        width: 100%;
+        height: 40px;
+        padding: 0 18px;
+        color: #a5a5a5;
+        font-size: 15px;
+        text-align: right;
+        white-space: nowrap;
+        box-sizing: border-box;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: 7px;
+          margin-top: -2px;
+          width: 17px;
+          height: 17px;
+          background: url('#{$imgPath}/error/icon_global.png') no-repeat;
+          vertical-align: middle;
+        }
+      }
+
+      &.is-open {
+        .btn_select {
+          border-radius: 0 0 5px 5px;
+          background-color: #ececec;
+          border-top: 0;
+        }
+
+        .list_select {
+          display: block;
+        }
+      }
+
+      .list_select {
+        display: none;
+        position: absolute;
+        top: -201px;
+        width: 181px;
+        border-radius: 5px 5px 0 0;
+        background-color: $white;
+        text-align: right;
+        border: 1px solid #ececec;
+        border-bottom: 0;
+        box-sizing: border-box;
+
+        li {
+          height: 40px;
+          padding: 0 18px;
+          font-size: 15px;
+          color: #a5a5a5;
+          line-height: 40px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #ececec;
+          }
+        }
+      }
+    }
+  }
+}
+
+.header_error {
+  position: fixed;
+  height: 98px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  padding-top: 18px;
+  background-color: $white;
+  box-sizing: border-box;
+
+  .logo_area {
+    display: block;
+    width: 109px;
+    height: 61px;
+    margin: 0 auto;
+    padding-top: 0;
+    text-align: center;
+
+    .link {
+      display: inline-block;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.exception_area {
+  width: 580px;
+  margin: 0 auto;
+  padding-top: 95px;
+  padding-bottom: 100px;
+  text-align: center;
+
+  .title {
+    color: #000;
+    font-size: 26px;
+    font-weight: normal;
+  }
+
+  .sub {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .btn_back_link {
+    overflow: hidden;
+    display: inline-block;
+    min-width: 150px;
+    height: 46px;
+    margin: 0 auto;
+    padding: 0 20px;
+    border-radius: 23px;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    line-height: 46px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  .exception_board {
+    position: relative;
+    width: 100%;
+    padding: 85px 50px 50px;
+    border-radius: 10px;
+    background-color: $white;
+    color: #676767;
+    text-align: center;
+    box-sizing: border-box;
+
+    &:before {
+      content: '';
+      position: absolute;
+    }
+
+    .title {
+      & + .sub {
+        margin-top: 12px;
+      }
+    }
+  }
+
+  .sub {
+    color: #676767;
+  }
+
+  .back_link_wrap {
+    margin-top: 27px;
+
+    .btn_back_link {
+      background-color: $highlights;
+      color: $white;
+    }
+  }
+
+  .download_app {
+    .sub {
+      & + .title {
+        margin-top: 12px;
+      }
+    }
+
+    .download_link {
+      margin-top: 26px;
+      font-size: 0;
+
+      a {
+        display: inline-block;
+        vertical-align: top;
+
+        & + a {
+          margin-left: 13px;
+        }
+      }
+    }
+  }
+
+  .service_inspection_time {
+    dl {
+      dt {
+        display: block;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 24px;
+      }
+
+      dd {
+        display: block;
+        color: $black;
+        font-size: 26px;
+        line-height: 39px;
+      }
+    }
+  }
+
+  &.exception_blocked {
+    .exception_board {
+      text-align: left;
+      padding-bottom: 47px;
+
+      &:before {
+        width: 134px;
+        height: 135px;
+        background: url(#{$imgPath}/error/login_blocked_char.png) no-repeat
+          center;
+        background-size: 100% auto;
+        top: -80px;
+        left: 232px;
+      }
+    }
+
+    .node_list {
+      margin-top: 17px;
+      padding-top: 18px;
+      border-top: 1px solid #ececec;
+
+      li {
+        & + li {
+          margin-top: 6px;
+        }
+      }
+
+      dl {
+        padding-left: 11px;
+        font-size: 16px;
+        line-height: 24px;
+
+        dt {
+          position: relative;
+          display: inline-block;
+          vertical-align: top;
+
+          &:before {
+            content: '\0000B7';
+            position: absolute;
+            top: 50%;
+            left: -9px;
+            transform: translateY(-50%);
+          }
+        }
+
+        dd {
+          display: inline-block;
+          vertical-align: top;
+        }
+      }
+    }
+
+    .not_see_again {
+      margin-top: 25px;
+
+      label {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+
+    .btn_has_confirm {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+      height: 46px;
+      margin-top: 47px;
+      padding: 0 15px;
+      border-radius: 23px;
+      background-color: $highlights;
+      color: $white;
+      font-size: 16px;
+    }
+  }
+
+  &.exception_fail {
+    .exception_board {
+      &:before {
+        width: 110px;
+        height: 176px;
+        background: url(#{$imgPath}/error/login_fail_char.png) no-repeat center;
+        background-size: 100% auto;
+        top: -121px;
+        left: 235px;
+      }
+    }
+
+    .download_app {
+      margin-top: 55px;
+    }
+  }
+
+  &.exception_private_post {
+    .exception_board {
+      &:before {
+        width: 146px;
+        height: 120px;
+        background: url(#{$imgPath}/error/exception_private_post_char.png)
+          no-repeat center;
+        background-size: 100% auto;
+        top: -65px;
+        left: 232px;
+      }
+
+      .sub {
+        a.highlights {
+          position: relative;
+
+          &:before {
+            content: '';
+            height: 1px;
+            background-color: $highlights;
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+
+  &.exception_service {
+    .exception_board {
+      &:before {
+        width: 167px;
+        height: 146px;
+        background: url(#{$imgPath}/error/exception_service_char.png) no-repeat
+          center;
+        background-size: 100% auto;
+        top: -91px;
+        left: 235px;
+      }
+    }
+
+    .service_inspection_time {
+      margin-top: 40px;
+    }
+
+    .back_link_wrap {
+      margin-top: 38px;
+    }
+  }
+
+  &.exception_internal_error {
+    .exception_board {
+      &:before {
+        width: 148px;
+        height: 136px;
+        background: url(#{$imgPath}/error/exception_internal_error_char.png)
+          no-repeat center;
+        background-size: 100% auto;
+        top: -81px;
+        left: 235px;
+      }
+    }
+  }
+
+  &.exception_http_error {
+    .exception_board {
+      &:before {
+        width: 152px;
+        height: 114px;
+        background: url(#{$imgPath}/error/exception_http_error_char.png)
+          no-repeat center;
+        background-size: 100% auto;
+        top: -59px;
+        left: 232px;
+      }
+
+      .title {
+        line-height: 30px;
+
+        & + .sub {
+          margin-top: 14px;
+        }
+      }
+    }
+  }
+}

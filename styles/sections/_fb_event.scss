@@ -1,0 +1,355 @@
+#fbEvent {
+  background: url('#{$imgPath}/fb_event/bg_fb_event.jpg') no-repeat fixed center/cover;
+  
+  .summary_box {
+      .event_num {
+          margin-bottom: 30px;
+          font-weight: 700;
+          color: #00a3ff;
+      }
+
+      .sub_tit {
+          letter-spacing: -0.1px;
+      }
+
+      .tit {
+          margin-top: 6px;
+          letter-spacing: -2.8px;
+
+          span {
+              color: #00a3ff;
+          }
+      }
+  }
+
+  .inner_wrap {
+      text-align: center;
+  }
+
+  .event_box {
+      position: relative;
+      margin-top: 38px;
+      font-size: 0;
+      white-space: nowrap;
+
+      .reward_lst {
+          display: inline-block;
+          text-align: left;
+          vertical-align: top;
+
+          li {
+              display: block;
+              position: relative;
+              width: 590px;
+              height: 103px;
+              background: #4fb4ee;
+
+              &:before {
+                  position: absolute;
+                  top: 50%;
+                  left: -45px;
+                  width: 18px;
+                  height: 18px;
+                  background: #fff;
+                  border: 3px solid #a4a4a4;
+                  border-radius: 50%;
+                  transform: translateY(-50%);
+                  box-sizing: border-box;
+                  content: '';
+              }
+
+              &:after {
+                  position: absolute;
+                  top: 50%;
+                  left: -39px;
+                  width: 6px;
+                  height: 100px;
+                  background: #a4a4a4;
+                  transform: translateY(8px);
+                  content: '';
+              }
+
+              &:last-child:after {
+                  display: none;
+              }
+
+              &~li {
+                  margin-top: 13px;
+              }
+
+              .reward_stat {
+                  display: flex;
+                  position: relative;
+                  height: 100%;
+                  font-size: 0;
+
+                  .requirement {
+                      display: flex;
+                      position: relative;
+                      width: 146px;
+                      height: 100%;
+                      justify-content: center;
+                      align-items: center;
+                      margin-right: -15px;
+
+                      span {
+                          position: relative;
+                          z-index: 2;
+                          font-size: 20px;
+                          font-weight: bold;
+                          color: #ffeb7a;
+                      }
+
+                      &::before {
+                          position: absolute;
+                          top: 50%;
+                          left: 50%;
+                          z-index: 1;
+                          transform: translate(-50%, -50%);
+                          content: '';
+                      }
+                  }
+
+                  .reward_name {
+                      display: block;
+                      flex-grow: 1;
+                      font-size: 22px;
+                      font-weight: bold;
+                      color: #fff;
+                      line-height: 103px;
+                  }
+
+                  &:before {
+                      position: absolute;
+                      right: 100%;
+                      top: 50%;
+                      border-top: 7px solid transparent;
+                      border-bottom: 7px solid transparent;
+                      border-right: 9px solid #4fb4ee;
+                      transform: translateY(-50%);
+                      content: '';
+                  }
+              }
+
+              .reward_img {
+                  position: absolute;
+                  bottom: 0;
+                  right: 0;
+
+                  img {
+                      width: 199px;
+
+                      &.off {
+                          display: none;
+                      }
+
+                      &.on {
+                          display: block;
+                      }
+
+                  }
+              }
+
+              &:nth-child(1) {
+                  .requirement:before {
+                      width: 101px;
+                      height: 38px;
+                      background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_1.png');
+                  }
+              }
+
+              &:nth-child(2) {
+                  .reward_name {
+                      font-size: 20px;
+                  }
+
+                  .requirement:before {
+                      width: 92px;
+                      height: 38px;
+                      background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_2.png');
+                  }
+              }
+
+              &:nth-child(3) {
+                  .reward_name {
+                      font-size: 20px;
+                  }
+
+                  .requirement:before {
+                      width: 87px;
+                          height: 37px;
+                          background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_3.png');
+                  }
+              }
+
+              &:nth-child(4) {
+                  .requirement:before {
+                      width: 88px;
+                      height: 39px;
+                      background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_4.png');
+                  }
+              }
+
+              &.is_clear {
+                  background: #a6a6a7;
+
+                  &:before {
+                      border-color: #4fb4ee;
+                  }
+
+                  &:after {
+                      background: #4fb4ee;
+                  }
+
+                  .reward_stat {
+                      .requirement {
+                          span {
+                              color: rgba(#fff, 0.3);
+                          }
+                      }
+
+                      .reward_name {
+                          color: rgba(#fff, 0.4);
+                      }
+
+                      &:before {
+                          border-right: 9px solid #a6a6a7;
+                          background-repeat: no-repeat;
+                      }
+                  }
+
+                  .reward_img {
+                      img {
+                          &.off {
+                              display: block;
+                          }
+
+                          &.on {
+                              display: none;
+                          }
+                      }
+
+                      &:after {
+                          position: absolute;
+                          bottom: 0;
+                          width: 120px;
+                          height: 109px;
+                          background: url('#{$imgPath}/fb_event/img_stamp_clear.png') no-repeat;
+                          color: transparent;
+                          content: 'Clear!';
+                      }
+                  }
+
+                  &:nth-child(1) {
+                      .requirement:before {
+                          background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_off_1.png');
+                      }
+
+                      .reward_img:after {
+                          right: 78px;
+                          bottom: 10px;
+                      }
+                  }
+
+                  &:nth-child(2) {
+                      .requirement:before {
+                          background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_off_2.png');
+                      }
+
+                      .reward_img:after {
+                          right: 108px;
+                          bottom: 5px;
+                      }
+                  }
+
+                  &:nth-child(3) {
+                      .requirement:before {
+                          background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_off_3.png');
+                      }
+
+                      .reward_img:after {
+                          right: 78px;
+                      }
+                  }
+
+                  &:nth-child(4) {
+                      .requirement:before {
+                          background-image: url('#{$imgPath}/fb_event/bg_reward_requirement_off_4.png');
+                      }
+
+                      .reward_img:after {
+                          right: 108px;
+                          bottom: -14px;
+                      }
+                  }
+              }
+          }
+      }
+
+      .fb_feed {
+          position: relative;
+          z-index: 1;
+          overflow: hidden;
+          -ms-overflow-style: none;
+          display: inline-block;
+          width: 500px;
+          height: 452px;
+          margin-left: 30px;
+          background-color: #fff;
+          vertical-align: top;
+      }
+
+      .notice_btn {
+          position: absolute;
+          top: 473px;
+          left: 0;
+      }
+
+      .deco_chicken {
+          position: absolute;
+          top: -91px;
+          left: -122px;
+          width: 146px;
+          height: 138px;
+          background: url('#{$imgPath}/fb_event/ico_chicken_like.png') no-repeat center/cover;
+          content: '';
+      }
+
+      .deco_right_char {
+          position: absolute;
+          top: -208px;
+          right: -675px;
+          width: 869px;
+
+          img {
+              width: 100%;
+          }
+      }
+
+      .deco_right_char_hand {
+          position: absolute;
+          z-index: 1;
+          top: -208px;
+          right: -2px;
+          width: 109px;
+
+          img {
+              width: 100%;
+          }
+      }
+
+      .deco_heart {
+          position: absolute;
+          top: -26px;
+          right: -371px;
+          width: 49px;
+          height: 48px;
+          background: url('#{$imgPath}/fb_event/ico_heart.png') no-repeat;
+      }
+  }
+
+  .follow_btn {
+      margin-top: 41px;
+      background-image: url('#{$imgPath}/fb_event/bg_blue_btn.png');
+  }
+}
